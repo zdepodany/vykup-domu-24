@@ -1537,6 +1537,10 @@ body {
     object-fit: cover;
 }
 
+.project-item-image--gallery img:nth-child(n+4) {
+    display: none;
+}
+
 .project-status {
     display: inline-block;
     padding: 0.35rem 0.75rem;
