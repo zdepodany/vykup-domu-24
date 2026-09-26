@@ -74,6 +74,8 @@
         <section class="section">
             <div class="container container--narrow">
                 <div class="privacy-content">
+                    <p class="privacy-updated">Poslední aktualizace: 26. 9. 2026</p>
+
                     <h2>1. Správce osobních údajů</h2>
                     <p>Správcem osobních údajů je:</p>
                     <p><strong>SOMITE, s. r. o.</strong><br>
@@ -121,15 +123,17 @@
                     <h2>5. Předávání osobních údajů třetím stranám</h2>
                     <p>Vaše osobní údaje mohou být zpracovávány následujícími zpracovateli:</p>
                     <ul>
+                        <li>Vercel Inc. – hosting webových stránek</li>
                         <li>Formspree – zajištění odesílání kontaktního formuláře</li>
-                        <li>GitHub Pages – hosting webových stránek</li>
                         <li>Hukot.net – e-mailové služby</li>
                     </ul>
-                    <p>Dále využíváme:</p>
+                    <p>Dále využíváme následující analytické a technické nástroje:</p>
                     <ul>
                         <li>Google Analytics 4 – analýza návštěvnosti webu</li>
+                        <li>Vercel Analytics – anonymizovaná analýza návštěvnosti webu (bez použití cookies)</li>
+                        <li>Vercel Speed Insights – měření rychlosti a výkonu webu (bez použití cookies)</li>
                     </ul>
-                    <p>Tyto služby mohou využívat cookies a zpracovávat technické údaje o návštěvě webu.</p>
+                    <p>Tyto služby mohou zpracovávat technické údaje o návštěvě webu (např. IP adresu, typ prohlížeče, navštívené stránky).</p>
 
                     <hr class="privacy-hr">
 
@@ -139,8 +143,36 @@
                         <li>analýze návštěvnosti</li>
                         <li>zlepšování funkčnosti webu</li>
                     </ul>
-                    <p>Používáme pouze analytické cookies.</p>
-                    <p>Používání cookies můžete upravit ve svém prohlížeči.</p>
+                    <p>Používáme pouze analytické cookies, a to až po udělení souhlasu prostřednictvím cookie lišty. Přehled skutečně používaných cookies:</p>
+
+                    <div class="privacy-table-wrap">
+                        <table class="privacy-table">
+                            <thead>
+                                <tr>
+                                    <th>Název</th>
+                                    <th>Poskytovatel</th>
+                                    <th>Účel</th>
+                                    <th>Platnost</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>_ga</td>
+                                    <td>Google Analytics 4</td>
+                                    <td>Rozlišení jednotlivých návštěvníků webu pro účely statistiky návštěvnosti</td>
+                                    <td>13 měsíců</td>
+                                </tr>
+                                <tr>
+                                    <td>_ga_JQGGBW0WTH</td>
+                                    <td>Google Analytics 4</td>
+                                    <td>Uchování stavu relace pro konkrétní vlastnost (property) v Google Analytics</td>
+                                    <td>13 měsíců</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p>Vercel Analytics a Vercel Speed Insights, které na webu rovněž používáme, cookies nevyužívají – návštěvnost a výkon webu měří anonymizovaně bez uložení identifikátoru do prohlížeče.</p>
+                    <p>Svůj souhlas s cookies můžete kdykoli změnit pomocí odkazu „Nastavení cookies“ v patičce webu, případně přímo v nastavení svého prohlížeče.</p>
 
                     <hr class="privacy-hr">
 
@@ -170,7 +202,35 @@
     </main>
 
     <footer class="footer">
-        <div class="container footer-inner">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="/" class="logo"><img src="img/logo.svg" alt="Výkup domů 24" class="footer-logo-img"></a>
+                <p class="footer-tagline">Rychlý a diskrétní výkup nemovitostí po celé České republice.</p>
+                <a href="tel:+420704005000" class="footer-phone">+420 704 005 000</a>
+                <a href="mailto:info@vykupdomu24.cz" class="footer-email">info@vykupdomu24.cz</a>
+            </div>
+
+            <nav class="footer-nav" aria-label="Výkup nemovitostí">
+                <p class="footer-nav-title">Výkup nemovitostí</p>
+                <ul class="footer-nav-list">
+                    <li><a href="vykup/byty.html">Byty</a></li>
+                    <li><a href="vykup/domy.html">Domy</a></li>
+                    <li><a href="vykup/pozemky.html">Pozemky</a></li>
+                    <li><a href="vykup/exekuce.html">Nemovitosti v exekuci</a></li>
+                    <li><a href="vykup/zadluzené.html">Zadlužené nemovitosti</a></li>
+                </ul>
+            </nav>
+
+            <nav class="footer-nav" aria-label="Společnost">
+                <p class="footer-nav-title">Společnost</p>
+                <ul class="footer-nav-list">
+                    <li><a href="zastava.html">Zástava</a></li>
+                    <li><a href="projekty.html">Naše projekty</a></li>
+                    <li><a href="investice.html">Investujte s námi</a></li>
+                    <li><a href="index.html#kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+
             <div class="footer-company">
                 <p class="footer-name">SOMITE, s.r.o.</p>
                 <address class="footer-address">
@@ -179,14 +239,17 @@
                 <p class="footer-id">IČ: <a href="https://ares.gov.cz/ekonomicke-subjekty/res/08153361" target="_blank" rel="noopener noreferrer" title="Ověřit v registru ARES">08153361</a></p>
             </div>
         </div>
-        <p class="footer-bottom">© 2026 SOMITE, s.r.o. · <a href="soukromi.html">Zásady ochrany osobních údajů</a> · <a href="https://zdenekpodany.cz" target="_blank" rel="noopener noreferrer">Web vytvořen od Zdeněk Podaný | Webovky Jednoduše</a></p>
+        <div class="container footer-bottom">
+            <p class="footer-copyright">© 2026 SOMITE, s.r.o.</p>
+            <p class="footer-legal"><a href="soukromi.html">Zásady ochrany osobních údajů</a> · <button type="button" class="js-cookie-settings">Nastavení cookies</button> · <a href="https://zdenekpodany.cz" target="_blank" rel="noopener noreferrer">Web vytvořen od Zdeněk Podaný | Webovky Jednoduše</a></p>
+        </div>
     </footer>
 
     <div id="cookieBar" class="cookie-bar" role="dialog" aria-labelledby="cookieBarTitle" aria-describedby="cookieBarDesc" aria-live="polite">
         <div class="cookie-bar-inner container">
             <div class="cookie-bar-content">
                 <h2 id="cookieBarTitle" class="cookie-bar-title">Používáme cookies</h2>
-                <p id="cookieBarDesc" class="cookie-bar-text">Používáme cookies k analýze návštěvnosti a zlepšování webu. Svůj souhlas můžete kdykoli změnit v nastavení prohlížeče. <a href="soukromi.html">Více informací</a></p>
+                <p id="cookieBarDesc" class="cookie-bar-text">Používáme cookies k analýze návštěvnosti a zlepšování webu. Svůj souhlas můžete kdykoli změnit v patičce webu. <a href="soukromi.html">Více informací</a></p>
             </div>
             <div class="cookie-bar-actions">
                 <button type="button" class="btn btn-outline cookie-bar-btn" data-action="reject" aria-label="Odmítnout cookies">Odmítnout</button>

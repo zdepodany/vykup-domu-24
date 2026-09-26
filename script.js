@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initContactForm();
     initProjectGallery();
     initCookieBar();
+    initScrollReveal();
 });
 
 function initNavBurger() {
@@ -247,25 +248,54 @@ function initCookieBar() {
 
     if (!bar) return;
 
+    function applyConsent(action) {
+        localStorage.setItem(COOKIE_CONSENT_KEY, action);
+        if (typeof gtag === 'function') {
+            gtag('consent', 'update', {
+                'analytics_storage': action === 'accept' ? 'granted' : 'denied'
+            });
+        }
+    }
+
     var consent = localStorage.getItem(COOKIE_CONSENT_KEY);
     if (consent === 'accept' || consent === 'reject') {
         bar.classList.add('cookie-bar--hidden');
-        if (consent === 'accept' && typeof gtag === 'function') {
-            gtag('consent', 'update', { 'analytics_storage': 'granted' });
-        }
-        return;
+        applyConsent(consent);
     }
 
     bar.querySelectorAll('[data-action]').forEach(function (btn) {
         btn.addEventListener('click', function () {
-            var action = btn.dataset.action;
-            localStorage.setItem(COOKIE_CONSENT_KEY, action);
-
-            if (action === 'accept' && typeof gtag === 'function') {
-                gtag('consent', 'update', { 'analytics_storage': 'granted' });
-            }
-
+            applyConsent(btn.dataset.action);
             bar.classList.add('cookie-bar--hidden');
         });
     });
+
+    document.querySelectorAll('.js-cookie-settings').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            bar.classList.remove('cookie-bar--hidden');
+            bar.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        });
+    });
+}
+
+function initScrollReveal() {
+    const items = document.querySelectorAll('.reveal');
+    if (!items.length) return;
+
+    if (!('IntersectionObserver' in window)) {
+        items.forEach(function (item) { item.classList.add('is-visible'); });
+        return;
+    }
+
+    const observer = new IntersectionObserver(function (entries, obs) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    items.forEach(function (item) { observer.observe(item); });
 }
